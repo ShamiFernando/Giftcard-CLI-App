@@ -149,16 +149,15 @@ def menu():
     #5th Option for the main menuw
     elif user_selection=="4":
             #diplayList=[]
-            def test():
-                infile2=open('spendingHistory.csv','rt')
-                newlist=infile2.readlines()
-                infile2.close()
-                for row in newlist:
-                    rowlist=row.split(",")
-                    newstring=("Item name:"+str(rowlist[2])+",  "+"Item price:"+str(rowlist[1])+",  "+"Card Name:"+str(rowlist[0]))
-                    print(newstring)
+            infile2=open('spendingHistory.csv','rt')
+            newlist=infile2.readlines()
+            infile2.close()
+            for row in newlist:
+                rowlist=row.split(",")
+                newstring=("Item name:"+str(rowlist[2])+",  "+"Item price:"+str(rowlist[1])+",  "+"Card Name:"+str(rowlist[0]))
+                print(newstring)
                 
-                menu()
+            menu()
     
 #----------------------------------------------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------------------------------------------
@@ -258,13 +257,14 @@ def menu():
 #----------------------------------------------------------------------------------------------------------------------        
 #----------------------------------------------------------------------------------------------------------------------
     #5th option in the main menu
-    if user_selection=="q":
+    elif user_selection=="q":
         print("Thank you!. Have a nice day.")
 #----------------------------------------------------------------------------------------------------------------------        
 #----------------------------------------------------------------------------------------------------------------------        
     #If user dosent select the valid input from the main menu.    
     else:
         print("Please enter a valid input")
+        print("")
         menu()
         
 #------------------------------------------------------------------------------------------------------------
