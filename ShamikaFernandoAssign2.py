@@ -1,12 +1,12 @@
-#At the beginning, the program shows a welcome message and asks if the user wants to “Press 1 to define a
-#gift card” or “Press 2 to go for a spending spree” or “Press ‘q’ to quit”. [NB: this main menu will have five
-#options: 3 are listed here and 2 more are described in a later part of this section]
+"""
+Author:Shamika Fernando
+Date: May 1st and May 20th
+Task: INFT1004 Assignment 2 Spending Spree
+"""
+
 Nlist=[] #List created to collect and transfer name,max number of items and spending limit to csv file
 #nameList =[] #List created to collect only names
-
-
-
-listGCE=[]
+listGCE=[] #User_name,initial_limit,Card_Blanace are stored
 
 def menu():
     print("********************************************************************")
@@ -117,7 +117,7 @@ def menu():
             listGCE=[User_name,initial_limit,Card_Blanace]
             
             
-            
+            #purchase history will be saved in a file named “spendingHistory.csv” (gift-card name, current balance, name of the item purchased, price, ending balance).
             for i in range(0, len(listName)):
                 String=( str(listGCE[0])+","+ str(List_start_Balance[i])+","+ str(listName[i])+","+ str(listPrice[i])+"," + str(ListBalance[i])+"\n")
                 content=open('spendingHistory.csv','at')
@@ -244,7 +244,7 @@ def menu():
         listGCE=[User_name,initial_limit,Card_Blanace]
         #should the card balance be the balance after all the purchases or after individual purchases.
         
-        
+        #Add user information (gift-card name, currentbalance, name of the item purchased, price, ending balance).to giftCards.csv
         for i in range(0, len(listName)):
             String=(str(listGCE[0])+"," + str(List_start_Balance[i])+","+ str(listName[i])+","+ str(listPrice[i])+"," +str(ListBalance[i])+"\n")
             content=open('spendingHistory.csv','at')
@@ -297,7 +297,7 @@ def selection_after_defining():
 #------------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------------
 def name():
-
+    #Checks if the name entered by the user is their in the csv file.
     Newcontent=open('giftCards.csv','rt')
     InfoList=Newcontent.readlines()
     Newcontent.close()
